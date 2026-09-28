@@ -1,23 +1,74 @@
 aid: beni
+
 name: Beni
-description: 'Beni is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.beniglobal.com/opengraph-image?e87fe144f66314f5
+
+description: Beni is a global employee benefits consulting and solutions provider, offering technology-driven services that deliver below-market
+  renewals, strategic benefits solutions, and innovative health plans. The company focuses on real relationships and best-in-class technology
+  to help employers manage fiduciary risk and improve employee satisfaction across multiple industries.
+
 url: https://raw.githubusercontent.com/api-evangelist/beni/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
-- Company
-apis: []
+- Employee Benefits
+- Consulting
+- Technology
+- Health
+- Solutions
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/beni-hosts.yml
+- type: Vendors
+  url: vendors/beni-vendors.yml
+- type: TermsOfService
+  url: https://www.beniglobal.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.beniglobal.com/privacy-policy
+- type: Newsroom
+  url: https://www.beniglobal.com/news
+- type: DomainSecurity
+  url: security/beni-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.beniglobal.com
+
+apis:
+- name: Beni API
+  description: Employee benefits API
+  humanURL: https://www.beniglobal.com
+  aid: beni:beni-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The API documentation site returns HTML shells for spec URLs, providing no machine‑readable contract.
+  evidence:
+  - url: https://www.beniglobal.com/openapi.json
+    status: 200
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
